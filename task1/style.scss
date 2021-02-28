@@ -1,0 +1,101 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.flag {
+    width: 300px;
+    height: 150px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+}
+.u {
+    display: flex;
+    flex-direction: column;
+}
+.blue,
+.yellow {
+    height: 50%;
+}
+.blue {
+    background-color: blue;
+}
+.yellow {
+    background-color: yellow;
+}
+.J {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.red {
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.I {
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.top,
+.bottom {
+    width: 100%;
+    height: 44%;
+    display: flex;
+    justify-content: space-between;
+}
+.whiteL,
+.whiteR {
+    background-color: white;
+}
+.whiteL {
+    width: 70px;
+}
+.whiteR {
+    width: 210px;
+    display: flex;
+    justify-content: flex-end;
+}
+.blueL,
+.blueR {
+    background-color: blue;
+}
+.blueL {
+    width: 60px;
+    height: 90%;
+}
+.blueR {
+    width: 200px;
+    height: 90%;
+}
+.bottom .whiteL,
+.bottom .whiteR {
+    display: flex;
+    align-items: flex-end;
+}
+.CH {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.whiteCH,
+.redCH {
+    height: 50%;
+}
+.whiteCH {
+    background-color: white;
+}
+.redCH {
+    background-color: red;
+}
+.blueCH {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(to left bottom, transparent 50%, blue 50%) top / 100% 50% no-repeat,
+        linear-gradient(to left top, transparent 50%, blue 50%) bottom / 100% 50% no-repeat;
+}

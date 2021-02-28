@@ -1,0 +1,163 @@
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flag {
+  width: 300px;
+  height: 150px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+}
+
+.u {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.blue,
+.yellow {
+  height: 50%;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.J {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.red {
+  background-color: red;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.I {
+  background-color: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.top,
+.bottom {
+  width: 100%;
+  height: 44%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.whiteL,
+.whiteR {
+  background-color: white;
+}
+
+.whiteL {
+  width: 70px;
+}
+
+.whiteR {
+  width: 210px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.blueL,
+.blueR {
+  background-color: blue;
+}
+
+.blueL {
+  width: 60px;
+  height: 90%;
+}
+
+.blueR {
+  width: 200px;
+  height: 90%;
+}
+
+.bottom .whiteL,
+.bottom .whiteR {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.CH {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.whiteCH,
+.redCH {
+  height: 50%;
+}
+
+.whiteCH {
+  background-color: white;
+}
+
+.redCH {
+  background-color: red;
+}
+
+.blueCH {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 150px;
+  height: 150px;
+  background: -webkit-gradient(linear, right top, left bottom, color-stop(50%, transparent), color-stop(50%, blue)) top/100% 50% no-repeat, -webkit-gradient(linear, right bottom, left top, color-stop(50%, transparent), color-stop(50%, blue)) bottom/100% 50% no-repeat;
+  background: linear-gradient(to left bottom, transparent 50%, blue 50%) top/100% 50% no-repeat, linear-gradient(to left top, transparent 50%, blue 50%) bottom/100% 50% no-repeat;
+}
+/*# sourceMappingURL=style.css.map */
