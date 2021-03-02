@@ -1,7 +1,7 @@
 onload = function () {
     renderList();
     renderinfo();
-    setInterval('renderinfo()', 1000);
+    // setInterval('renderinfo()', 1000);
 }
 const url = 'https://raw.githubusercontent.com/Hipo/university-domains-list/master/world_universities_and_domains.json'
 var textResp = document.querySelector('#textResp')
@@ -12,17 +12,6 @@ async function getResponse(textResp) {
     let response = await fetch(url)
     let content = await response.json()
     let count = 0;
-    table.innerHTML += `
-    <tr>
-            <th>id</th>
-            <th>alpha_two_code</th>
-            <th>country</th>
-            <th>domains</th>
-            <th>name</th>
-            <th>web_pages</th>
-            <th>Сохранить в мой список</th>
-        </tr>
-        `
     content.forEach(function (item, i, content) {
         if (item.country == textResp) {
             count++;
@@ -50,6 +39,10 @@ function send() {
 function clearTable() {
     table.innerHTML = ''
     textResp.value = ''
+    let arr = []
+    let store = JSON.stringify(arr)
+    localStorage.setItem('listInfo', store)
+    renderinfo()
 }
 function renderinfo() {
     let count = 0;
@@ -63,14 +56,14 @@ function renderinfo() {
 function saveInfo(){
     let listChild = table.childNodes
         var arr = []
-    for(let i = 3; i<listChild.length; i+=2){
+    for(let i = 1; i<listChild.length; i+=2){
         let arrT = []
-        // console.log(listChild[i].childNodes[0].innerHTML)
-        // for(let i = 1; i<7; i++){
-        // arrT.push(listChild[i].childNodes[0].children[i])
-        // }
         let obj = {
-            html: listChild[i].childNodes[0].innerHTML,
+            coun: listChild[i].childNodes[0].childNodes[3].innerText,
+            country: listChild[i].childNodes[0].childNodes[5].innerText,
+            dom: listChild[i].childNodes[0].childNodes[7].innerText,
+            name: listChild[i].childNodes[0].childNodes[9].innerText,
+            link: listChild[i].childNodes[0].childNodes[11].innerText,
             checked: listChild[i].childNodes[0].children[6].firstChild.checked
         }
         arr.push(obj)
@@ -81,17 +74,32 @@ function saveInfo(){
 }
 table.onclick = function (event) {
     if(event.target.type == 'checkbox'){
-        saveInfo()   
+        saveInfo()  
+        renderinfo()
     }
 }
 function renderList(){
     if(localStorage.getItem('listInfo') != null){
         let result = localStorage.getItem('listInfo')
         result = JSON.parse(result)
-        // console.log(result)
+        var count = 0
+         console.log(result)
         for(let i = 0; i < result.length; i++){
-             table.innerHTML += result[i].html
-            // let tr = document.createElement('tr');
+            if(result[i].checked){
+                count++
+                table.innerHTML += `
+                <tr>
+                     <td>${count}</td>
+                     <td>${result[i].coun}</td>
+                     <td>${result[i].country}</td>
+                     <td>${result[i].dom}</td>
+                     <td>${result[i].name}</td>
+                     <td><a href="${result[i].link}">${result[i].link}</a></td>
+                     <td><input type="checkbox" checked = "${result[i].checked}"></td>
+                     </tr>
+                `
+            }
+            
         }
     }
 }
